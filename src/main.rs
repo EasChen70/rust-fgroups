@@ -1,3 +1,8 @@
+use std::io;
+
 fn main() {
-    println!("Hello, World!");
+    let mut input = String::new();
+
+    let input = input.trim().to_string();
+
 }
