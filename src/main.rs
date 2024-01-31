@@ -3,8 +3,12 @@ use std::collections::HashMap;
 use std::fs::File;
 
 fn main() {
+    let mut fname = String::new();
+    io::stdin().read_line(&mut fname).unwrap();
+    // Remove the newline character from the filename
+    let fname = fname.trim();
     //Open, and reads file, assigning to input
-    let file = File::open("input.txt").expect("Failed to open input.txt");
+    let file = File::open(fname).expect("Failed to open input.txt");
     let input = io::BufReader::new(file);
     //Initialize hashmap
     let mut fingerprint_map: HashMap<String, Vec<String>> = HashMap::new();
