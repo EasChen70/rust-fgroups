@@ -22,16 +22,15 @@ fn main() {
         }
     }
     
-    //printing function, enumerate allows us to track of index as well
-    for (index, (_key, values)) in fingerprint_map.iter().enumerate(){
-        if values.len() > 1{
-            for(_index, value) in values.iter().enumerate(){
-                println!("{}", value);            
-            }
-            //checks if any more groups left, if its not last one, print a blank space
-            if index < fingerprint_map.len() - 1{
-                println!();
-            }    
+    // Printing function to print only values with more than one occurrence
+    for (index, values) in fingerprint_map.values().filter(|values| values.len() > 1).enumerate() {
+        for value in values {
+            println!("{}", value);
+        }
+        // Check if it's not the last group to print a blank line
+        if index < fingerprint_map.values().filter(|values| values.len() > 1).count() - 1 {
+            println!();
         }
     }
+
 }
