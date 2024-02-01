@@ -31,7 +31,6 @@ fn main() {
             //checks if any more groups left, if its not last one, print a blank space
             if index < fingerprint_map.len() - 1{
                 println!();
-                println!();
             }    
         }
     }
