@@ -16,8 +16,8 @@ fn main() {
             if let (Some(fingerprint), Some(name)) = (split_input.next(), split_input.next()){
 
                 //insert key-value pairs into hashmap
-                fingerprint_map.entry(fingerprint.to_string())
-                .or_insert_with(Vec::new).push(name.to_string());
+                fingerprint_map.entry(String::from(fingerprint))
+                .or_insert_with(Vec::new).push(String::from(name.trim()));
             }
         }
     }
