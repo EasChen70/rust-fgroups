@@ -2,7 +2,7 @@
 
 ## Programmers: Eason Chen (me), Amir Rahmat (partner)
 
-## Acknowledgement: Talked about assignment specifications for the project, Amir told me we needed to read from standard input, from from a file.
+## Acknowledgement: Talked about assignment specifications for the project, Amir told me we needed to read from standard input, not from a file. We more talked about the world of ideas/concepts.
 
 ## Implementation: I believe that the loop and use of splitn were correct implementations, I had trouble with the printing of elements, specifically how to categorize something as a group. But I was able to implement this with the use of .enumerate and another index parameter.
 
