@@ -1,19 +1,13 @@
 use std::io::{self, BufRead};
 use std::collections::HashMap;
-use std::fs::File;
 
 fn main() {
-    let mut fname = String::new();
-    io::stdin().read_line(&mut fname).unwrap();
-    // Remove the newline character from the filename
-    let fname = fname.trim();
-    //Open, and reads file, assigning to input
-    let file = File::open(fname).expect("Failed to open input.txt");
-    let input = io::BufReader::new(file);
+    //Takes user input
+    let input = io::stdin();
     //Initialize hashmap
     let mut fingerprint_map: HashMap<String, Vec<String>> = HashMap::new();
     //loop over lines of input to process
-    for line in input.lines(){
+    for line in input.lock().lines(){
         if let Ok(line) = line{
         
             //Splits fingerprint and name
@@ -36,6 +30,7 @@ fn main() {
             }
             //checks if any more groups left, if its not last one, print a blank space
             if index < fingerprint_map.len() - 1{
+                println!();
                 println!();
             }    
         }
